@@ -17,10 +17,10 @@
 #
 
 # Vars
-_about="Daniel Stocker"
-_head_title="Daniel Stocker"
-_twitter="stoege"
-_url="nodex.bsdcloud.info"
+_about="Roman Zolotarev"
+_head_title="Roman Zolotarev"
+_twitter="romanzolotarev"
+_url="www.romanzolotarev.com"
 
 usage() {
   echo 'usage: export HOST=127.0.0.1'
