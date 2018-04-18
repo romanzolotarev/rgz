@@ -73,7 +73,7 @@ wrap_html() {
       *) title="${line#*;}";;
     esac
     echo "<tr><td><a href=\"$url\">$url</a><td> $title</tr>" >> "$1/sitemap.html"
-    echo "<url><loc>https://{_url}$url</loc><lastmod>$date</lastmod><priority>1.0</priority></url>" >> "$1/sitemap.xml"
+    echo "<url><loc>https://${_url}$url</loc><lastmod>$date</lastmod><priority>1.0</priority></url>" >> "$1/sitemap.xml"
   done
   echo '</table>' >> "$1/sitemap.html"
   echo '</urlset>' >> "$1/sitemap.xml"
