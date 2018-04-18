@@ -16,6 +16,12 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #
 
+# Vars
+_about="Daniel Stocker"
+_head_title="Daniel Stocker"
+_twitter="stoege"
+_url="nodex.bsdcloud.info"
+
 usage() {
   echo 'usage: export HOST=127.0.0.1'
   echo '       export PORT=4000'
@@ -67,7 +73,7 @@ wrap_html() {
       *) title="${line#*;}";;
     esac
     echo "<tr><td><a href=\"$url\">$url</a><td> $title</tr>" >> "$1/sitemap.html"
-    echo "<url><loc>https://www.romanzolotarev.com$url</loc><lastmod>$date</lastmod><priority>1.0</priority></url>" >> "$1/sitemap.xml"
+    echo "<url><loc>https://{_url}$url</loc><lastmod>$date</lastmod><priority>1.0</priority></url>" >> "$1/sitemap.xml"
   done
   echo '</table>' >> "$1/sitemap.html"
   echo '</urlset>' >> "$1/sitemap.xml"
@@ -81,13 +87,13 @@ wrap_html() {
     case "$url" in
       /index.html)
         title='Home'
-        head_title='<title>Roman Zolotarev</title>'
+        head_title="<title>${_head_title}</title>"
         header__home='Home'
         ;;
       *)
         title="${line#*;}"
-        head_title="<title>$title - Roman Zolotarev</title>"
-        header__home='<a href="/">Home</a> - <a href="https://twitter.com/romanzolotarev">Twitter</a> - <strong><a href="/patreon.html">Patreon</a></strong>'
+        head_title="<title>$title - ${_head_title}</title>"
+        header__home="<a href=\"/\">Home</a> - <a href=\"https://twitter.com/${_twitter}\">Twitter</a> - <strong><a href=\"/patreon.html\">Patreon</a></strong>"
         ;;
     esac
     # merge page with html template
@@ -103,7 +109,7 @@ wrap_html() {
 <div class="page">
 <div class="header"><div class="header__home">$header__home</div><div class="header__light-off"><label for="light-off" class="light-off-button"></label></div></div>
 <div class="article">$article</div>
-<div class="footer"><a href="/about.html#Everything%20is%20software">Copyright</a> 2016&ndash;$year <a href="/">Roman Zolotarev</a></div>
+<div class="footer"><a href="/about.html#Everything%20is%20software">Copyright</a> 2016&ndash;$year <a href="/">${_about}</a></div>
 </div></body></html>
 EOF
   done
