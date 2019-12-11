@@ -160,6 +160,7 @@ $ <b>~/bin/s /var/www/htdocs/www</b>
 [bloguslibrus.fr](https://www.bloguslibrus.fr)<br>
 [cryogenix.net](https://cryogenix.net)<br>
 [dethronedemperor.com](https://www.dethronedemperor.com)<br>
+[dev.levlaz.org](https://dev.levlaz.org)<br>
 [grosu.nl](https://grosu.nl/)<br>
 [h3artbl33d.nl](https://h3artbl33d.nl/)<br>
 [high5.nl](https://high5.nl/)<br>
