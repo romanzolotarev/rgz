@@ -64,7 +64,7 @@ revert changes.
 
 <pre>
 # <b>cp /etc/login.conf /etc/login.conf.bak</b>
-# <b>cp /etc/ssh/sshd_config /etc/ssh/ssh_config.bak</b>
+# <b>cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak</b>
 #
 </pre>
 
