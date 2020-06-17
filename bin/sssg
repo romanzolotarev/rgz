@@ -32,5 +32,5 @@ then cd "$src" || exit
 else
 	tmux new-window -n "$1" -c "$src"
 	tmux split-window -l 2 -d -c "$src" \
-	"while :; do cd $src;find . -type f $IGNORE |entr -d ssg5 '$src' '$dst' '$title' '$url'; done"
+	"while :; do cd $src;find . -type f $IGNORE |entr -d ssg6 '$src' '$dst' '$title' '$url'; done"
 fi
