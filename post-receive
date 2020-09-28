@@ -22,7 +22,7 @@ echo "${url}/raw/.git" > "$repo/url"
 git clone "$repo" "$raw"
 (cd "$raw/.git" && git update-server-info)
 
-"$HOME/bin/ssg4" "$raw" "$dst" "$title" "$url" > /dev/null
+"$HOME/bin/ssg6" "$raw" "$dst" "$title" "$url" > /dev/null
 "$HOME/bin/rssg" "$raw/n/index.md" "Newsletter - $title" > "$dst/n/rss.xml"
 
 mkdir -p "$src"
