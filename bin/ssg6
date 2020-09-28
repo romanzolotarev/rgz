@@ -1,6 +1,6 @@
 #!/bin/sh -e
 #
-# https://rgz.ee/bin/ssg5
+# https://rgz.ee/bin/ssg6
 # Copyright 2018-2019 Roman Zolotarev <hi@romanzolotarev.com>
 #
 # Permission to use, copy, modify, and/or distribute this software for any
@@ -215,7 +215,7 @@ render_html_file() {
 	{ body = body "\n" $0 }
 	END {
 		body = substr(body, 2)
-		if (body ~ /<[Hh][Tt][Mm][Ll]/) {
+		if (body ~ /<[/]?[Hh][Tt][Mm][Ll]/) {
 			print body
 			exit
 		}

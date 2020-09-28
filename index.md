@@ -82,3 +82,5 @@ You will need nothing else, just my guides. Build as you learn.
 <img src="/ref/vetelko.jpeg" class="br-100 w2">
 <img src="/ref/wesley974.jpeg" class="br-100 w2">
 </a>
+
+</html>

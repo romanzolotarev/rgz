@@ -11,11 +11,14 @@
 # nsd: DNSSEC
 # nsd: rgz.ee and romanzolotarev.com, remove the others
 
+ipv4="46.23.94.144"
+ipv6="2a03:6000:6f68:605::144"
+
 LINK_CERTS='
-ln -fs /etc/ssl/private/s1.key /etc/ssl/private/46.23.88.178.key
-ln -fs /etc/ssl/private/s1.key /etc/ssl/private/2a03:6000:1015::178.key
-ln -fs /etc/ssl/s1.pem /etc/ssl/46.23.88.178.crt
-ln -fs /etc/ssl/s1.pem /etc/ssl/2a03:6000:1015::178.crt
+ln -fs /etc/ssl/private/s1.key /etc/ssl/private/'$ipv4'.key
+ln -fs /etc/ssl/private/s1.key /etc/ssl/private/'$ipv6'.key
+ln -fs /etc/ssl/s1.pem /etc/ssl/'$ipv4'.crt
+ln -fs /etc/ssl/s1.pem /etc/ssl/'$ipv6'.crt
 ln -fs /etc/ssl/private/s1.key /etc/ssl/private/140.82.28.210.key
 ln -fs /etc/ssl/private/s1.key /etc/ssl/private/2001:19f0:9002:1505:5400:1ff:fe73:6676.key
 ln -fs /etc/ssl/s1.pem /etc/ssl/140.82.28.210.crt

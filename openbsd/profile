@@ -107,5 +107,6 @@ alias gl='git log --oneline -30'
 alias gp='git push'
 alias gr='git rebase -i HEAD~20'
 alias gs='git status -sb'
+alias gpl='git pull'
 
 alias a="vi \$HOME/.profile && . \$HOME/.profile"
