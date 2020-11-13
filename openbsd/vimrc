@@ -130,7 +130,7 @@ Plug 'leafgarland/typescript-vim', { 'for': ['tsx', 'ts'] }
 
 Plug 'sbdchd/neoformat', {'for': ['sql', 'sass', 'scss', 'css', 'javascript', 'typescript', 'json', 'html']}
   augroup Neoformat
-    autocmd! BufWrite *.sql,*.ts,*.js,*.json silent! undojoin | Neoformat
+    autocmd! BufWrite *.sql,*.ts,*.js,*.json,*.css,*.html silent! undojoin | Neoformat
   augroup END
 
 " Linters
