@@ -13,10 +13,6 @@ There are four options to start:
 - [install OpenBSD in VirtualBox](/virtualbox/openbsd.html) on your computer, or
 - [install OpenBSD on bare metal](/openbsd/install.html "2017-09-20")
 
-If you have any issues with OpenBSD <a
-href="/feedback.html?comment=How%20to%20do%20this%20on%20OpenBSD%3f">ping
-me</a> anytime. I'm always glad to help.
-
 
 ## OpenBSD as a desktop
 

@@ -1,4 +1,4 @@
-<div>$USER_PROFILE_LINK</div>
+(archived at the moment)
 
 # Newsletter
 
@@ -6,8 +6,6 @@ Self-hosted websites.<br>
 Shell scripts and text editors.<br>
 How-to guides for BSD/Unix users.<br>
 Tutorials for web developers.
-
-<div>$SUBSCRIPTION_FORM</div>
 
 - [Shell scripts to manage newsletters and memberships](2019-03-02.html "2019-03-02")
 - [nsd(8), ssg4, Tachyons, and BSD stories](2019-01-04.html "2019-01-04")
