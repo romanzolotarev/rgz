@@ -56,6 +56,7 @@ j20() 	{ jpegoptim --strip-all --preserve --preserve-perms --verbose -m20 $@; }
 fit()	{ convert -resize 1200 "$1" "$1"; jpeg "$1"; }
 f50()	{ convert -resize 50 "$1" "$1"; jpeg "$1"; }
 f120()	{ convert -resize 120 "$1" "$1"; jpeg "$1"; }
+f600()	{ convert -resize 600 "$1" "$1"; jpeg "$1"; }
 
 set -A complete_b -- $(ls "$HOME/box")
 b() { set -A complete_b -- $(ls "$HOME/box") && mkdir -p "$HOME/box/$1" && cd "$HOME/box/$1"; }
@@ -105,6 +106,7 @@ alias gd='git diff'
 alias gf='git commit --amend --no-edit'
 alias gl='git log --oneline -30'
 alias gp='git push'
+alias gpf='git push -f'
 alias gr='git rebase -i HEAD~20'
 alias gs='git status -sb'
 alias gpl='git pull'

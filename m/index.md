@@ -44,6 +44,7 @@ OpenBSD compatible computer required.</p>
 - [mount file system via Media Transfer Protocol on OpenBSD](/openbsd/mtp.html "2018-11-06")
 - [configure login.conf(5) and sshd(8) for YubiKey on OpenBSD](/openbsd/yubikey.html "2017-09-01")
 
+
 ## Web server on OpenBSD
 
 You install _production-ready web server_ on your bare metal server
@@ -85,16 +86,9 @@ mkdir, mtree, printf, readlink, rm, sed, sort, tail, tr, wc.<br>
 - [make a static site with lowdown(1) and rsync(1)](/ssg.html "2018-04-07")
 - [generate RSS feeds with grep(1), sed(1), and awk(1)](/rssg.html "2018-09-21")
 
-## HTTP and CGI
-
-<p class="f7">Good-old HTTP and CGI as backend: httpd, slowcgi,
-cron, smtpd, awk, b64encode, cat, chmod, cpio, date, dd, find, grep,
-head, jot, mkdir, printf, readlink, rm, sed, sh, sha256, sort, tail,
-tee, tr, wc), jq, and curl.</p>
-
-- [submit web forms](/form.html)
 
 ---
+
 
 ## Archive
 

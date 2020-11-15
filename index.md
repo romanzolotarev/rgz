@@ -22,17 +22,17 @@ Don't allow complexity sneak into your products.
 Start building with simple battle-tested technologies.  Start
 building your products with less code, fewer dependencies, with
 good-old web stack: **vanilla JavaScript, HTML, CSS** on the frontend,
-and **CGI and shell scripts** for the backend, and maybe **Unix
+and **Node.js and SQLite** for the backend, and maybe **Unix
 userland** as your IDE.
 
 Scale as you go. Add new tools only when you really need them.
 Learn fundamentals first. Learn as you build. Keep the web fast,
 safe, neat, and accessible for everyone.&#8221;
 
-<div class="mb2 mt4"><a href="/about.html"><img
+<div class="mb2 mt4"><img
   src="/avatar120.jpeg"
   class="w3 br-100"
-  title="romanzolotarev.com"></a></div>
+  title="romanzolotarev.com"></div>
 
 **Roman Zolotarev**<br>
 _Die-hard Webmaster_<br>
@@ -56,7 +56,6 @@ You will need nothing else, just my guides. Build as you learn.
 - [Plain text and files](/m/#Plain text and files)
 - [Portable shell scripts](/m/#Portable shell scripts)
 - [Static web pages](/m/#Static web pages)
-- [HTTP and CGI](/m/#HTTP and CGI)
 
 ---
 
