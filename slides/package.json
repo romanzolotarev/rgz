@@ -1,0 +1,20 @@
+{
+  "name": "slides",
+  "version": "1.0.0",
+  "description": "minimalist slideshow",
+  "main": "slides.js",
+  "scripts": {
+    "build": "cleancss slides.css > ../slides.css && terser -c -m reserved slides.js prism.js > ../slides.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://rgz.ee/raw/.git"
+  },
+  "keywords": ["slides", "slideshow"],
+  "author": "romanzolotarev",
+  "license": "ISC",
+  "devDependencies": {
+    "clean-css-cli": "^4.3.0",
+    "terser": "^5.4.0"
+  }
+}

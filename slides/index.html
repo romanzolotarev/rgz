@@ -1,0 +1,53 @@
+<html>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" href="/slides.css" />
+<title>slides</title>
+
+<div class="header">
+<span id="prev">&larr;</span>
+<span id="next">&rarr;</span>
+</div>
+
+<div class="slide">
+<h2>minimalist slideshow</h2>
+<pre><code class="language-html">&lt;link rel="stylesheet" href="slides.css" /&gt;
+&lt;script src="slides.js" defer&gt;&lt;script&gt;</code></pre>
+</div>
+
+<div class="slide">
+<h2>slides are divs</h2>
+<pre><code class="language-html">&lt;div class="slide"&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;
+hello world
+&lt;code&gt;&lt;pre&gt;
+&lt;div&gt;</code></pre>
+</div>
+
+<div class="slide">
+<h2>syntax highlight</h2>
+<pre><code class="language-js">const keyMap = new Map([
+['37', 'prev'], // left
+['38', 'prev'], // up
+['39', 'next'], // right
+['40', 'next'], // down
+])</code>
+
+powered by <a href="https://github.com/PrismJS/prism/">prism.js</a>
+</pre>
+</div>
+
+<div class="slide">
+<pre>
+src      <a href="/slides/slides.js">slides.js</a>
+author   <a href="/">romanzolotarev</a>
+license  ics
+
+download <a href="https://rgz.ee/slides.js">slides.js</a>
+         <a href="https://rgz.ee/slides.css">slides.css</a>
+
+</pre>
+</div>
+
+<script src="/slides.js" defer></script>
+</html>
