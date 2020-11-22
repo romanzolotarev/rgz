@@ -1,0 +1,30 @@
+{
+  "name": "node-box",
+  "version": "1.0.0",
+  "description": "node",
+  "scripts": {
+    "test": "jest --watch",
+    "start": "node src/app",
+    "dev": "nodemon src/app",
+    "test:ci": "eslint src && jest src",
+    "test:load": "loadtest -n 1000 -c 10 -P '{}' -T application/json http://localhost:3000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "steno": "^0.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.13.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.6",
+    "prettier": "^2.1.2"
+  },
+  "nodemonConfig": {
+    "ignore": ["db.json"]
+  }
+}
