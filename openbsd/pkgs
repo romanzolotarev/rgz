@@ -9,6 +9,7 @@ gstreamer1--
 gstreamer1-plugins-base--
 gstreamer1-plugins-good--
 gstreamer1-plugins-libav--
+iridium--
 ja-fonts-funet--
 ja-fonts-gnu--
 ja-sazanami-ttf--
@@ -18,6 +19,7 @@ lowdown--
 mosh--
 mpv--
 mupdf--
+node--
 oath-toolkit--
 optipng--
 quirks--
@@ -32,7 +34,7 @@ sxiv--
 the_silver_searcher--
 unclutter--
 unzip--
-vim--lua-no_x11
+vim--gtk3-perl-python3-ruby
 w3m--image
 xclip--
 xcursor-dmz--
