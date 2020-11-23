@@ -1,21 +1,20 @@
-const express = require('express')
-const morgan = require('morgan')
+const app = require('express')()
+const morgan = require('morgan')('combined')
 const { file, readDb, writeDb } = require('../lib/db.js')
 
 ;(async () => {
-  const app = express()
-  app.use(morgan('combined'))
+  app.use(morgan)
   const adapter = file('db.json', {})
 
   app.get('/', (req, res) => {
-    const collection = readDb(adapter)
-    res.send(collection)
+    const db = readDb(adapter)
+    res.send(db)
   })
 
   app.post('/', (req, res) => {
-    const collection = readDb(adapter)
+    const db = readDb(adapter)
     const data = {
-      ...collection,
+      ...db,
       [`${Date.now()} ${Math.random()}`]: 'x'
     }
     writeDb(adapter, data)

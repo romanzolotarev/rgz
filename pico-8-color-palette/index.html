@@ -1,62 +1,66 @@
-<style><!--
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>pico-8 color palette</title>
+<style>
 .black       { background-color: #000000; }
-.dark-blue   { background-color: #1D2B53; }
-.dark-purple { background-color: #7E2553; }
+.dark-blue   { background-color: #1d2b53; }
+.dark-purple { background-color: #7e2553; }
 .dark-green  { background-color: #008751; }
-.brown       { background-color: #AB5236; }
-.dark-gray   { background-color: #5F574F; }
-.light-gray  { background-color: #C2C3C7; }
-.white       { background-color: #FFF1E8; }
-.red         { background-color: #FF004D; }
-.orange      { background-color: #FFA300; }
-.yellow      { background-color: #FFEC27; }
-.green       { background-color: #00E436; }
-.blue        { background-color: #29ADFF; }
-.indigo      { background-color: #83769C; }
-.pink        { background-color: #FF77A8; }
-.peach       { background-color: #FFCCAA; }
+.brown       { background-color: #ab5236; }
+.dark-gray   { background-color: #5f574f; }
+.light-gray  { background-color: #c2c3c7; }
+.white       { background-color: #fff1e8; }
+.red         { background-color: #ff004d; }
+.orange      { background-color: #ffa300; }
+.yellow      { background-color: #ffec27; }
+.green       { background-color: #00e436; }
+.blue        { background-color: #29adff; }
+.indigo      { background-color: #83769c; }
+.pink        { background-color: #ff77a8; }
+.peach       { background-color: #ffccaa; }
 @font-face {
   font-family: pico8;
   src: url('pico-8.woff2') format('woff2'),
        url('pico-8.woff') format('woff');
   font-weight: normal; font-style: normal;
 }
-BODY {
+body {
   line-height: 26px;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
 }
-BODY, H1 { font-family: pico8, monospace; font-size: 11px; }
-H1 { margin-top: 4em; }
+body, h1 { font-family: pico8, monospace; font-size: 11px; }
+h1 { margin-top: 4em; }
 .palette { margin: 2em 0; }
-.palette DIV { padding: 1em; color: #000000; margin: 0 -1em; }
-.palette DIV.black { color: #5F574F; }
---></style>
+.palette div { padding: 1em; color: #000000; margin: 0 -1em; }
+.palette div.black { color: #5f574f; }
+</style>
 
-<h1>PICO-8 Color Palette</h1>
+<h1>pico-8 color palette</h1>
 <div class="palette">
 <div class="black">       #000000 (0,   0,   0)   black</div>
-<div class="dark-blue">   #1D2B53 (29,  43,  83)  dark-blue</div>
-<div class="dark-purple"> #7E2553 (126, 37,  83)  dark-purple</div>
+<div class="dark-blue">   #1d2b53 (29,  43,  83)  dark-blue</div>
+<div class="dark-purple"> #7e2553 (126, 37,  83)  dark-purple</div>
 <div class="dark-green">  #008751 (0,   135, 81)  dark-green</div>
-<div class="brown">       #AB5236 (171, 82,  54)  brown</div>
-<div class="dark-gray">   #5F574F (95,  87,  79)  dark-gray</div>
-<div class="light-gray">  #C2C3C7 (194, 195, 199) light-gray</div>
-<div class="white">       #FFF1E8 (255, 241, 232) white</div>
-<div class="red">         #FF004D (255, 0,   77)  red</div>
-<div class="orange">      #FFA300 (255, 163, 0)   orange</div>
-<div class="yellow">      #FFEC27 (255, 236, 39)  yellow</div>
-<div class="green">       #00E436 (0,   228, 54)  green</div>
-<div class="blue">        #29ADFF (41,  173, 255) blue</div>
-<div class="indigo">      #83769C (131, 118, 156) indigo</div>
-<div class="pink">        #FF77A8 (255, 119, 168) pink</div>
-<div class="peach">       #FFCCAA (255, 204, 170) peach</div>
+<div class="brown">       #ab5236 (171, 82,  54)  brown</div>
+<div class="dark-gray">   #5f574f (95,  87,  79)  dark-gray</div>
+<div class="light-gray">  #c2c3c7 (194, 195, 199) light-gray</div>
+<div class="white">       #fff1e8 (255, 241, 232) white</div>
+<div class="red">         #ff004d (255, 0,   77)  red</div>
+<div class="orange">      #ffa300 (255, 163, 0)   orange</div>
+<div class="yellow">      #ffec27 (255, 236, 39)  yellow</div>
+<div class="green">       #00e436 (0,   228, 54)  green</div>
+<div class="blue">        #29adff (41,  173, 255) blue</div>
+<div class="indigo">      #83769c (131, 118, 156) indigo</div>
+<div class="pink">        #ff77a8 (255, 119, 168) pink</div>
+<div class="peach">       #ffccaa (255, 204, 170) peach</div>
 </div>
-<div><a href="/pico-8-color-palette/pico-8.clr">OS X Color Picker palette</a></div>
-<div><a href="/pico-8-color-palette/screenshot.png">Screenshot of v0.1.8</a></div>
+<div><a href="/pico-8-color-palette/pico-8.clr">os x color picker palette</a></div>
+<div><a href="/pico-8-color-palette/screenshot.png">screenshot of v0.1.8</a></div>
 <div><a href="/pico-8-color-palette/palette.png">palette.png</a></div>
 <div><a href="https://www.lexaloffle.com/pico-8.php">console</a>, palette,<br>
-and typeface by <a href="https://www.lexaloffle.com/bbs/?uid=1&mode=about">Joseph White</a></div>
-<div>font by <a href="https://www.lexaloffle.com/bbs/?tid=3109">RhythmLynx</a></div>
-<div>PICO-8 color palette<br>
-is licensed under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC-0</a></div>
+and typeface by <a href="https://www.lexaloffle.com/bbs/?uid=1&mode=about">joseph white</a></div>
+<div>font by <a href="https://www.lexaloffle.com/bbs/?tid=3109">rhythmlynx</a></div>
+<div>pico-8 color palette<br>
+is licensed under <a href="https://creativecommons.org/publicdomain/zero/1.0/">cc-0</a></div>

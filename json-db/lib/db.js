@@ -10,9 +10,6 @@ const file = (source, defaultValue) => ({
       return defaultValue
     }
     const data = fs.readFileSync(source, 'utf-8')
-    if (!data) {
-      throw Error(`can't read file ${source}`)
-    }
     const trimmed = data.trim()
     return trimmed ? deserialize(trimmed) : defaultValue
   },

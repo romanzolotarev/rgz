@@ -1,4 +1,2 @@
 #!/bin/sh
-tr -cd '[:alnum:]' < /dev/urandom |
-fold -w ${1:-20} |
-head -n 1
+jot -rcs '' 60 32 126

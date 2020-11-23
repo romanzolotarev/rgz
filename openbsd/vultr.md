@@ -1,17 +1,16 @@
-**DISCLAIMER**<br> I'm a customer of Vultr and the blue button is
-a referral link.  When you [sign
-up](/vultr.html), Vultr adds few
-weeks of hosting for this site. Thank you.
-
-_Tested on [OpenBSD](/openbsd/) 6.3 and 6.4_
+<p class="small">
+<b>disclaimer:</b> i'm a customer of vultr and when you use this <a
+href="/vultr.html">referral link</a>. vultr adds few weeks of hosting
+for this site. thank you.<br>
+<br>tested on <a href="/openbsd/">openbsd</a> 6.3 and 6.4
+</p>
 
 # Install OpenBSD on Vultr
 
 If you need a new OpenBSD server, make sure you have your [public
 SSH key](/ssh.html) handy, then...
 
-<a class="b link ph2 pv1 mb2 dib ba bg-vltr white b--black
-hover-white hover-bg-black" href="/vultr.html">register at Vultr</a>
+<a class="button" href="/vultr.html">register at Vultr</a>
 
 Deploy an instance, for example:
 
@@ -37,7 +36,7 @@ and your private SSH key (assuming it's in the default location:
 
 	Please use the sendbug(1) utility to report bugs in the system.
 	Before reporting a bug, please try to reproduce it with the latest
-	version of the code.  With bug reports, please try to ensure that
+	version of the code. With bug reports, please try to ensure that
 	enough information to reproduce the problem is enclosed, and if a
 	known fix for it exists, include that as well.
 

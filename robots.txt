@@ -1,5 +1,5 @@
 user-agent: *
-sitemap: https://www.romanzolotarev.com/sitemap.xml
+sitemap: https://rgz.ee/sitemap.xml
 disallow: /raw/
 noindex: /raw/
 disallow: /src/

@@ -27,7 +27,7 @@ ln -fs /etc/ssl/s1.pem /etc/ssl/2001:19f0:9002:1505:5400:1ff:fe73:6676.crt
 
 main() {
 	test -n "$1" || fail "usage: ${0##*/} action [args]"
-	BASE="$HOME/prv/conf"
+	BASE="$HOME/src/conf"
 	action="$1"
 	# now=$(date +%Y%m%d-%H%M%S)
 

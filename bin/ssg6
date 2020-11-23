@@ -215,7 +215,7 @@ render_html_file() {
 	{ body = body "\n" $0 }
 	END {
 		body = substr(body, 2)
-		if (body ~ /<[/]?[Hh][Tt][Mm][Ll]/) {
+		if (body ~ /<\/?[Hh][Tt][Mm][Ll]/) {
 			print body
 			exit
 		}
