@@ -19,8 +19,8 @@ _em0_ network interface should be configured by OpenBSD installer.
 You can change the configuration anytime.
 
 <pre>
-# <b>echo</b> 'dhcp
-<i>up</i>' <b>&gt; /etc/hostname.em0</b>
+<i></i><b>echo 'dhcp
+up' &gt; /etc/hostname.em0</b>
 #
 # <b>chown root:wheel /etc/hostname.em0</b>
 # <b>chmod 0640 /etc/hostname.em0</b>

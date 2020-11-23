@@ -1,9 +1,10 @@
-_Tested on [OpenBSD](/openbsd/) 6.3 and [macOS](/macos/) 10.13_
 
 # Generate SSH keys
 
-Generate a strong passphrase to protect your private key. For
-example, with [diceware](/diceware.html).
+_tested on [OpenBSD](/openbsd/) 6.3 and [macOS](/macos/) 10.13_
+
+Generate a strong passphrase to protect your private key.  For example,
+with [diceware](/diceware.html).
 
 Run [ssh-keygen(1)](https://man.openbsd.org/ssh-keygen.1) to create
 a SSH key pair and enter that passphrase:

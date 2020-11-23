@@ -1,7 +1,3 @@
-<style><!-- BODY, H1, H2 {
-  font-family: "Comic Sans MS", "Chalkboard SE", "Comic Neue";
-}--></style>
-
 # Why OpenBSD?
 
 OpenBSD is a minimalist operating system: my full web development

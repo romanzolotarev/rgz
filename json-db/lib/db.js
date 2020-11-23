@@ -1,4 +1,4 @@
-const fs = require('graceful-fs')
+const fs = require('fs')
 
 const serialize = x => JSON.stringify(x, null, 0)
 const deserialize = JSON.parse
