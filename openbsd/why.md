@@ -1,3 +1,5 @@
+<style>body { font-family: "Comic Sans MS", "Chalkboard SE", "Comic Neue", monaco, monospace; }</style>
+
 # Why OpenBSD?
 
 OpenBSD is a minimalist operating system: my full web development

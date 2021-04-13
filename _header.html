@@ -6,7 +6,7 @@
 html { margin: 1em auto; max-width: 40em; }
 body, h1, h2, h3 { font: 16px/1.6em monaco, monospace; text-transform: lowercase; -webkit-text-size-adjust: 100%; }
 h1, h2, h3 { font-weight: bold; margin-top: 1em; }
-h1 { font-size: 3em; font-family: serif; line-height: 1.1em; }
+h1 { margin-top: 3em; font-size: 2em; }
 p { margin-top: 1em; }
 ol, ul { list-style-type: none; padding: 0; margin: 0; }
 li { padding: 0.125rem 0; }
@@ -20,15 +20,15 @@ pre i::before { content: "> "; color: #aaa; }
 pre strong { background-color: #0000cc; color: #fff; }
 pre em { font-style: normal; background-color: #fda; }
 a { text-decoration-thickness: 1px; text-underline-offset: 5px; }
-.logo, .avatar { border-radius: 100%; width: 60px; }
-.logo { margin-bottom: 2em; }
+.avatar { border-radius: 100%; width: 60px; }
+.logo { margin-bottom: 2em; font-size: 2em; }
 .button { display: inline-block; border: #00f solid 1px; padding: 0.5em 1em; text-decoration: none; }
-.small, .small a { color: #888; }
+.logo, .logo a, .small, .small a { color: #888; }
+.logo a, .small a { text-decoration-color: #555; }
 
 @media (prefers-color-scheme: dark) {
 a, a:link, a:visited { color: #fda; text-decoration-color: #ca8; }
-
-html { background-color: #000; color: #aaa; }
+html { background-color: #000; color: #ccc; }
 pre { background-color: #222; }
 pre i { color: #444; }
 pre b { color: #fff; }
@@ -37,8 +37,7 @@ pre i::before { color: #222; }
 pre strong { background-color: #0000cc; color: #fff; }
 pre em { background-color: #444; }
 .button { border-color: #fda; }
-.small, .small a { color: #888; }
-.small a { text-decoration-color: #555; }
+.logo a, .small a { color: #888; text-decoration-color: #555; }
 }
 </style>
-<a href="/"><img class="avatar" src="/rgzee-black.svg"/></a>
+<p class="logo"><a href="/">RGZ.EE</a></p>
