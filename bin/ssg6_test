@@ -1,0 +1,177 @@
+#!/bin/sh
+
+program="${0%_test}"
+
+total=0; nos=0
+no() { total=$((total+1)); echo "no ok $total - $1"; nos=$((nos+1)); }
+ok() { total=$((total+1)); echo "ok $total - $1"; }
+eq() { if [ "$1" = "$2" ]; then ok "$3"; else no "$3"
+	printf '\033[32m%s\n\033[31m%s\n\033[m' "-$1-" "-$2-"; fi; }
+desc() { printf '#\n\033[1m%s\033[m\n' "$1"; }
+
+##########################################################################
+
+
+desc 'args'
+
+temp=$(mktemp -d)
+usage='usage: ssg6 src dst title base_url'
+
+out=$(2>&1 "$program")
+eq "$out" "$usage" 'no args'
+
+out=$(2>&1 "$program" "$temp/src")
+eq "$out" "$usage" 'no dst, no title'
+
+out=$(2>&1 "$program" "$temp/src" "$temp/dst")
+eq "$out" "$usage" 'no title'
+
+out=$(2>&1 "$program" "$temp/src" "$temp/dst" 'r')
+eq "$out" "$usage" 'no base_url'
+
+out=$(2>&1 "$program" "$temp/src" "$temp/dst" 'r' '//www')
+eq "$out" "ssg6: $temp/src: No such directory" 'src not found'
+
+mkdir "$temp/src"
+out=$(2>&1 "$program" "$temp/src" "$temp/dst" 'r' '//www')
+eq "$out" "ssg6: $temp/dst: No such directory" 'dst not found'
+
+rm -rf "${temp:?}"
+
+
+desc "log"
+
+temp=$(mktemp -d)
+mkdir "$temp/dst"
+mkdir "$temp/src"
+cd "$temp/src" || exit 1
+echo '.' > "$temp/src/.ssgignore"
+mkdir .git 'a a' b c a 'a/a' 'a/_temp'
+touch 'a.jpeg' 'b/a.png' '_styles.css' '.gitignore' '_header.html'
+echo '<html>Title 0' > "0.html"
+echo '<h2>Title A</h2>' > a.html
+echo '<H1>Title B</H1>
+# Second title B' > b/b.md
+"$program" "$temp/src" "$temp/dst" 'r' '//www' > "$temp/out" 2> "$temp/err"
+
+log='./b/a.png
+./b/b.md
+./a.jpeg
+./0.html
+./a.html'
+
+log2='./b/a.png'
+
+log3='./b/b.md
+./0.html
+./a.html'
+
+eq "$log" "$(cat "$temp/out")" 'out: initial run'
+eq '[ssg] 5 files, 3 urls' "$(cat "$temp/err")" 'err: initial run'
+
+"$program" "$temp/src" "$temp/dst" 'r' '//www' > "$temp/out" 2> "$temp/err"
+eq '' "$(cat "$temp/out")" 'out: no changes'
+eq '[ssg] no files, 3 urls' "$(cat "$temp/err")" 'err: no changes'
+
+touch 'b/a.png'
+"$program" "$temp/src" "$temp/dst" 'r' '//www' > "$temp/out" 2> "$temp/err"
+eq "$log2" "$(cat "$temp/out")" 'out: touch b/a.png'
+eq '[ssg] 1 file, 3 urls' "$(cat "$temp/err")" 'err: touch b/a.png'
+
+header='
+<html>
+<body>'
+footer='</body>
+</html>'
+# shellcheck disable=SC2016
+echo "$header"'
+<title></title>
+</head>
+<body>' > "$temp/src/_header.html"
+echo "$footer" > "$temp/src/_footer.html"
+
+"$program" "$temp/src" "$temp/dst" 'r' '//www' > "$temp/out" 2> "$temp/err"
+eq "$log3" "$(cat "$temp/out")" 'out: touch _header.html'
+eq '[ssg] 3 files, 3 urls' "$(cat "$temp/err")" 'err: touch _header.html'
+
+
+desc "wrap and copy"
+
+cd "$temp/dst" &&
+ds="$(find . -type d ! -name '.' | sort | xargs)"
+eq "$ds" './a ./a a ./a/a ./b ./c' 'dirs created'
+
+model="$header"'
+<title>r</title>
+</head>
+<body>
+<h2>Title A</h2>
+'"$footer"
+
+eq "$model" "$(cat ./a.html)" 'html wrapped'
+
+model="$header"'
+<title>Title B &mdash; r</title>
+</head>
+<body>
+<H1>Title B</H1>
+
+<h1 id="Second%20title%20B">Second title B</h1>
+'"$footer"
+
+eq "$model" "$(cat ./b/b.html)" 'markdown generated'
+
+eq '<html>Title 0' "$(cat "$temp/dst/0.html")" 'exclude pages with HTML tags'
+
+fs="$(find . -type f | sort | xargs)"
+eq "$fs" './.files ./0.html ./a.html ./a.jpeg ./b/a.png ./b/b.html ./sitemap.xml' 'files copied'
+
+rm -rf "${temp:?}"
+
+
+desc 'sitemap'
+
+temp=$(mktemp -d)
+
+mkdir "$temp/src" "$temp/dst"
+
+echo '.' > "$temp/src/.ssgignore"
+echo 'Page 1' > "$temp/src/page1.html"
+mkdir "$temp/src/dir"
+echo '<h1>Page 5</h1>' > "$temp/src/dir/index.html"
+> "$temp/src/page4.md" echo '# Page 4
+
+# XXX'
+
+echo '# Page 3' > "$temp/src/page3.md"
+> "$temp/src/page2.html" echo '<h1>Page 2</h1>
+
+<h1>XXX</h1>'
+echo '# Page 3' > "$temp/src/page3.md"
+
+model='<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>//www/page1.html</loc><lastmod>XXXX-XX-XXTXX:XX:XX+XXXX</lastmod><priority>1.0</priority></url>
+<url><loc>//www/dir/</loc><lastmod>XXXX-XX-XXTXX:XX:XX+XXXX</lastmod><priority>1.0</priority></url>
+<url><loc>//www/page4.html</loc><lastmod>XXXX-XX-XXTXX:XX:XX+XXXX</lastmod><priority>1.0</priority></url>
+<url><loc>//www/page3.html</loc><lastmod>XXXX-XX-XXTXX:XX:XX+XXXX</lastmod><priority>1.0</priority></url>
+<url><loc>//www/page2.html</loc><lastmod>XXXX-XX-XXTXX:XX:XX+XXXX</lastmod><priority>1.0</priority></url>
+</urlset>'
+
+"$program" "$temp/src" "$temp/dst" 'r' '//www' > "$temp/out" 2> "$temp/err"
+
+out=$(sed 's#lastmod>[^<]*</#lastmod>XXXX-XX-XXTXX:XX:XX+XXXX</#' \
+"$temp/dst/sitemap.xml")
+eq "$model" "$out" 'sitemap.xml'
+
+rm -rf "${temp:?}"
+
+
+##########################################################################
+
+echo "1..$total"
+if [ "$nos" -gt 0 ]; then echo "FAILED $nos/$total"; else echo "PASS"; fi

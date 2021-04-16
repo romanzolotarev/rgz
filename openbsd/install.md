@@ -64,19 +64,19 @@ Select `(I)nstall` and answer questions.
 <pre>
 System hostname? = <b>foo</b>
 Which network interface do you wish to configure? = <b>em0</b>
-DNS domain name? = <b>romanzolotarev.com</b>
-Password for root account? = <b>**************************</b>
+DNS domain name? = <em>doman</em>
+Password for root account? = <em>**************************</em>
 Do you want the X Window System to be started by xenodm(1)? = <b>yes</b>
-Setup a user? = <b>romanzolotarev</b>
-Full name for user romanzolotarev? = <b>Roman Zolotarev</b>
-Password for user romanzolotarev? = <b>*******************</b>
+Setup a user? = <em>username</em>
+Full name for user <u>username</u>? = <em>full name</em>
+Password for user <u>username</u>? = <em>*******************</em>
 What timezone are you in? = <b>UTC</b>
 Which disk is the root disk? = <b>sd2</b>
 Use (W)hole disk MBR, whole disk (G)PT or (E)dit? = <b>gpt</b>
 Location of sets? = <b>disk</b>
 Is the disk partition already mounted? = <b>no</b>
 Which disk contains the install media? = <b>sd1</b>
-Directory does not contain SHA256.sig. Continue without verification? = <b>yes</b>
+Continue without verification? = <b>yes</b>
 </pre>
 
 Unplug USB drive with the installer and boot OpenBSD from the target
@@ -89,10 +89,9 @@ Password:
 #
 </pre>
 
-Set install URL and run [syspatch(8)](https://man.openbsd.org/syspatch.8):
+run [syspatch(8)](https://man.openbsd.org/syspatch.8):
 
 <pre>
-# <b>echo 'https://fastly.cdn.openbsd.org/pub/OpenBSD'>/etc/installurl</b>
 # <b>syspatch</b>
 ...
 Relinking to create unique kernel... done.
