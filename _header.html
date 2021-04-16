@@ -12,8 +12,10 @@ ol, ul { list-style-type: none; padding: 0; margin: 0; }
 li { padding: 0.125rem 0; }
 p img, table { max-width: 100%; }
 
-pre { font-family: monaco, monospace; font-size: 14px; overflow-x: auto; text-transform: none; background-color: #eee; padding: 1em; }
-pre i { font-style: normal; color: #888; }
+pre { font-family: monaco, monospace; font-size: 14px; overflow-x: auto; padding: 1em; }
+code, pre { background-color: #eee; text-transform: none; }
+code { padding: 0.25em; }
+pre i { font-style: normal; }
 pre b { color: #000; }
 pre u { text-decoration: none; color: #333; background-color: #c0e0ee; }
 pre i::before { content: "> "; color: #aaa; }
@@ -21,7 +23,7 @@ pre strong { background-color: #0000cc; color: #fff; }
 pre em { font-style: normal; background-color: #fda; }
 a { text-decoration-thickness: 1px; text-underline-offset: 5px; }
 .avatar { border-radius: 100%; width: 60px; }
-.logo { margin-bottom: 2em; font-size: 2em; }
+.logo { font-size: 2em; }
 .button { display: inline-block; border: #00f solid 1px; padding: 0.5em 1em; text-decoration: none; }
 .logo, .logo a, .small, .small a { color: #888; }
 .logo a, .small a { text-decoration-color: #555; }
@@ -29,13 +31,12 @@ a { text-decoration-thickness: 1px; text-underline-offset: 5px; }
 @media (prefers-color-scheme: dark) {
 a, a:link, a:visited { color: #fda; text-decoration-color: #ca8; }
 html { background-color: #000; color: #ccc; }
-pre { background-color: #222; }
-pre i { color: #444; }
+code, pre { background-color: #222; }
 pre b { color: #fff; }
 pre u { color: #444; background-color: #333; }
-pre i::before { color: #222; }
+pre i::before { color: #555; }
 pre strong { background-color: #0000cc; color: #fff; }
-pre em { background-color: #444; }
+pre em { color: #000; background-color: #fda; padding: 0.25em; }
 .button { border-color: #fda; }
 .logo a, .small a { color: #888; text-decoration-color: #555; }
 }

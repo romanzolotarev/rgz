@@ -1,9 +1,7 @@
-<p class="small">
-<b>disclaimer:</b> i'm a customer of vultr and when you use this <a
-href="/vultr.html">referral link</a>. vultr adds few weeks of hosting
-for this site. thank you.<br>
-<br>tested on <a href="/openbsd/">openbsd</a> 6.3 and 6.4
-</p>
+<p class="small"><b>disclaimer:</b> i'm a customer of vultr and when you
+use this <a href="/vultr.html">referral link</a>. vultr adds few weeks
+of hosting for this site. thank you.</p>
+<p class="small">tested on <a href="/openbsd/">openbsd</a> 6.3 and 6.4</p>
 
 # Install OpenBSD on Vultr
 
