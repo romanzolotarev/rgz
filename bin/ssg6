@@ -236,8 +236,7 @@ render_sitemap() {
 	echo 'http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"'
 	echo 'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
 	echo "$urls" |
-		sed -E 's#^(.*)$#<url><loc>'"$base_url"'/\1</loc><lastmod>' \
-			"$date"'</lastmod><priority>1.0</priority></url>#'
+		sed -E 's#^(.*)$#<url><loc>'"$base_url"'/\1</loc><lastmod>'"$date"'</lastmod><priority>1.0</priority></url>#'
 	echo '</urlset>'
 }
 
