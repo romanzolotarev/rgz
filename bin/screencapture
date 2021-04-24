@@ -75,8 +75,8 @@ stop)
 	;;
 
 *)
-	echo 'usage: screenshot start'
-	echo '                | stop'
+	echo 'usage: screencapture start'
+	echo '                   | stop'
 	exit 1
 	;;
 
