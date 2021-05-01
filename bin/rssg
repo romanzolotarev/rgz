@@ -66,10 +66,10 @@ no_file() {
 md_to_html() {
 	test -x "$(which lowdown)" || exit 3
 	lowdown \
-	-D html-skiphtml \
-	-D smarty \
-	-d metadata \
-	-d autolink "$1"
+    --html-no-escapehtml \
+    --html-no-skiphtml \
+    --parse-no-metadata \
+    --parse-no-autolink "$1"
 }
 
 
