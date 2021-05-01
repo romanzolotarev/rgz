@@ -1,5 +1,5 @@
 <p class="small">tested on <a href="/macos/">macos</a> 11 and
-<a href="/openbsd/">openbsd</a> 6.8</p>
+<a href="/openbsd/">openbsd</a> 6.9</p>
 
 # prepare bootable usb drive with openbsd installer on macos
 
@@ -7,14 +7,14 @@ download the installer and verify its checksum:
 
 <pre>
 $ <b>cd /tmp</b>
-$ <b>export URL=https://cloudflare.cdn.openbsd.org/pub/OpenBSD</b>
-$ <b>curl -Os $URL/6.8/amd64/SHA256</b>
-$ <b>curl -O  $URL/6.8/amd64/install68.img</b>
+$ <b>export URL=https://cdn.openbsd.org/pub/OpenBSD</b>
+$ <b>curl -Os $URL/6.9/amd64/SHA256</b>
+$ <b>curl -O  $URL/6.9/amd64/install69.img</b>
 ...
-$ <b>grep install68.img SHA256|cut -f4 -d' '</b>
-14ea602583030b33e91ee8fde8dd76113984e9fac6598f9f609f408137c4cff2
-$ <b>shasum -a 256 install68.img|cut -f1 -d' '</b>
-14ea602583030b33e91ee8fde8dd76113984e9fac6598f9f609f408137c4cff2
+$ <b>grep install69.img SHA256|cut -f4 -d' '</b>
+263bbe15cbc7290a1c015f4720c3b275eff974c13904b27a0b6e71533643f2aa
+$ <b>shasum -a 256 install69.img|cut -f1 -d' '</b>
+263bbe15cbc7290a1c015f4720c3b275eff974c13904b27a0b6e71533643f2aa
 $
 </pre>
 
@@ -39,10 +39,10 @@ replace `/dev/diskX` with the identifier of the flash drive.<br>
 <pre>
 $ <b>sudo diskutil unmountDisk /dev/diskX</b>
 Unmount of all volumes on disk4 was successful
-$ <b>sudo dd if=install68.img of=/dev/diskX bs=1m</b>
+$ <b>sudo dd if=install69.img of=/dev/diskX bs=1m</b>
 <i>664+1 records in</i>
 664+1 records out
-696745984 bytes transferred in 172.728421 secs (4033766 bytes/sec)
+696745984 bytes transferred in 168.646802 secs (4131392 bytes/sec)
 $
 </pre>
 
