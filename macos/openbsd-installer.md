@@ -3,23 +3,18 @@
 
 # prepare bootable usb drive with openbsd installer on macos
 
-download the installer and verify its checksum:
+download and verify the installer:
 
 <pre>
 $ <b>cd /tmp</b>
 $ <b>export URL=https://cdn.openbsd.org/pub/OpenBSD</b>
 $ <b>curl -Os $URL/6.9/amd64/SHA256</b>
-$ <b>curl -O  $URL/6.9/amd64/install69.img</b>
-...
-$ <b>grep install69.img SHA256|cut -f4 -d' '</b>
-263bbe15cbc7290a1c015f4720c3b275eff974c13904b27a0b6e71533643f2aa
-$ <b>shasum -a 256 install69.img|cut -f1 -d' '</b>
-263bbe15cbc7290a1c015f4720c3b275eff974c13904b27a0b6e71533643f2aa
-$
+$ <b>curl -Os $URL/6.9/amd64/install69.img</b>
+$ <b>shasum -c SHA256 --ignore-missing</b>
+install69.img: OK
 </pre>
 
-plug in an empty usb drive. its size should be at least 400 mb.
-find an identifier of the flash drive:
+plug in an empty usb flash drive and find its identifier:
 
 <pre>
 $ <b>sudo diskutil list</b>
@@ -27,13 +22,12 @@ $ <b>sudo diskutil list</b>
 /dev/disk4 (external, physical):
    #:                    TYPE NAME   SIZE       IDENTIFIER
    0:  FDisk_partition_scheme        8.0 GB     disk4
-   1:                    0xEF ⁨⁩       491.5 KB   disk4s1
-   2:                 OpenBSD ⁨⁩       695.7 MB   disk4s4
+...
                   (free space)       7.3 GB     -
 $
 </pre>
 
-replace `/dev/diskX` with the identifier of the flash drive.<br>
+replace `/dev/diskX` with the identifier of the drive.<br>
 **all data on `/dev/diskX` will be erased!**
 
 <pre>
